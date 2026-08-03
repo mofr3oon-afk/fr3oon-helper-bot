@@ -1,10 +1,12 @@
 [project]
 name = "fr3oon-helper-bot"
-version = "1.0.0"
-description = "Telegram moderation bot for MOBA SHOP card exchange group"
+version = "1.1.0"
+description = "Telegram moderation bot for MOBA SHOP card exchange group with OCR support"
 requires-python = ">=3.12"
 dependencies = [
-    "requests==2.32.3"
+    "requests==2.32.3",
+    "pillow==11.3.0",
+    "pytesseract==0.3.13"
 ]
 
 [tool.vercel]
