@@ -581,44 +581,76 @@ def handle_message(msg):
 
     clean_old_memory()
 
+<<<<<<< HEAD
     if not is_admin and is_flood(user_id):
+=======
+    if is_flood(user_id):
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "ممنوع السبام والرسائل الكتير ورا بعض")
         return
 
+<<<<<<< HEAD
     if not is_admin and is_forwarded(msg):
+=======
+    if is_forwarded(msg):
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "ممنوع الرسائل المعاد توجيهها في الجروب")
         return
 
     forbidden_media = msg.get("video") or msg.get("animation") or msg.get("document") or msg.get("audio") or msg.get("voice") or msg.get("video_note") or msg.get("sticker")
+<<<<<<< HEAD
     if not is_admin and forbidden_media:
+=======
+    if forbidden_media:
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "المسموح من الميديا هو الصور فقط")
         return
 
+<<<<<<< HEAD
     if not is_admin and is_photo_flood(user_id, msg):
+=======
+    if is_photo_flood(user_id, msg):
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "ممنوع ارسال صور كتير بسرعة")
         return
 
+<<<<<<< HEAD
     if not is_admin and message_has_link(msg):
+=======
+    if message_has_link(msg):
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "ممنوع نشر روابط في الجروب")
         return
 
+<<<<<<< HEAD
     if not is_admin and message_has_bad_word(msg):
+=======
+    if message_has_bad_word(msg):
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "ممنوع الشتيمة في الجروب")
         return
 
     text = get_text(msg)
+<<<<<<< HEAD
     if not is_admin and is_repeated_text(chat_id, user_id, text):
+=======
+    if is_repeated_text(chat_id, user_id, text):
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "ممنوع تكرار نفس الرسالة")
         return
 
+<<<<<<< HEAD
     if not is_admin and is_repeated_photo(msg):
+=======
+    if is_repeated_photo(msg):
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
         delete_message(chat_id, message_id)
         send_warning(chat_id, "الصورة دي اتبعت قبل كده")
         return
@@ -677,7 +709,11 @@ class handler(BaseHTTPRequestHandler):
             return
         self._send_json(200, {
             "ok": True,
+<<<<<<< HEAD
             "message": "Fr3oon Helper Bot V8 OCR is running",
+=======
+            "message": "Fr3oon Helper Bot V7 OCR is running",
+>>>>>>> 349db093dd13ca8146bc168ae35834124113968c
             "rules": "text/photos allowed; OCR on images; other media/links/profanity/spam/photo-flood/forwards blocked",
         })
 
